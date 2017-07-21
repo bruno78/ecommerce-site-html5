@@ -10,6 +10,7 @@
 <script src="../_scripts/respond.min.js"></script>
 <![endif]-->
 <link href="_css/main.css" rel="stylesheet" media="screen, projection">
+<link href="_css/range.css" rel="stylesheet" media="screen, projection">
 <meta name="viewport" content="initial-scale=1.0" />
 <script src="_scripts/jquery-1.8.2.min.js"></script>
 </head>
@@ -64,8 +65,8 @@
         <form name="form1" method="post" action="">
           <p>
           <!-- Insert range input type here -->
-          <input id="slider" type="range" min="50" max="400" step="25" value="400" />
-          <input id="rangeValue" type="text" size="2" />
+          <input id="slider" type="range" min="50" max="400" step="25" value="400" onchange="printValue('slider', 'rangeValue')"/>
+          <input id="rangeValue" type="text" size="3" />
           </p>
         </form>
       </div>
@@ -139,5 +140,50 @@
   </nav>
   <p>&copy;Copyright  Roux Academy of Art &amp; Design.  All rights reserved. <a href="_source/privacy.htm" title="privacy statement">Privacy Statement</a> |<a href="_source/legal.htm" title="legal terms"> Legal Terms and Conditions</a> |<a href="_source/disclosures.htm" title="student outcomes and disclosures"> Student Outcomes/Disclosures</a></p>
 </footer>
+<script>
+  let printValue = (sliderID, textbox) => {
+    let x = document.getElementById(textbox);
+    let y = document.getElementById(sliderID);
+    x.value = y.value;
+  }
+
+  window.onload = ()=>{ printValue('slider', 'rangeValue')}
+</script>
+<script>
+  // Set price data for paintings
+  $('#painting1').data({ id:1, price:250 });
+  $('#painting2').data({ id:2, price:400 });
+  $('#painting3').data({ id:3, price:75 });
+  $('#painting4').data({ id:4, price:150 });
+  $('#painting5').data({ id:5, price:200 });
+  $('#painting6').data({ id:6, price:350 });
+
+  // Link range to paintings
+  $(document).ready(()=> {
+    let theValue;
+
+    $('#slider').change(()=> {
+      theValue = $('#rangeValue').val();
+      filterItems(theValue);
+    });
+  });
+
+  let filterItems = (priceCriteria) => {
+
+    $.each($('#gallery div'), (i, item) => {
+      $item = $(item);
+      itemData = $item.data();
+
+      if(itemData.price <= priceCriteria) {
+        $item.animate({opacity: 1});
+        itemData.matching = true;
+      }
+      else {
+        $item.animate({opacity: 0.5});
+        itemData.matching = false;
+      }
+    });
+  }
+</script>
 </body>
 </html>
