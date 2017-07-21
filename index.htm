@@ -37,23 +37,23 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non  mauris orci, quis tincidunt sapien. Vestibulum sodales est ut diam  tincidunt non bibendum dui cursus. Nulla blandit iaculis ipsum nec  ullamcorper. In mattis gravida magna et elementum. </p>
     </article>
     <article id="gallery" class="post">
-      <div id="painting1" class="painting"><img src="_images/paintings/arrows.jpg" width="190" height="190" alt="Arrows">
+      <div id="painting1" class="painting" draggable="true"><img src="_images/paintings/arrows.jpg" width="190" height="190" alt="Arrows">
         <p>Arrows - <span class="price">$250</span></p>
       </div>
-      <div id="painting2" class="painting"> <img src="_images/paintings/eye.jpg" width="190" height="190" alt="Eye">
+      <div id="painting2" class="painting" draggable="true"> <img src="_images/paintings/eye.jpg" width="190" height="190" alt="Eye">
         <p>Eye - <span class="price">$400</span></p>
       </div>
-      <div id="painting3" class="painting lastOne"> <img src="_images/paintings/graffiti.jpg" width="190" height="190" alt="Graffiti">
+      <div id="painting3" class="painting lastOne" draggable="true"> <img src="_images/paintings/graffiti.jpg" width="190" height="190" alt="Graffiti">
         <p>Graffiti - <span class="price">$75</span></p>
       </div>
 
-      <div id="painting4" class="painting"><img src="_images/paintings/orange-star.jpg" width="190" height="190" alt="Orange Star">
+      <div id="painting4" class="painting" draggable="true"><img src="_images/paintings/orange-star.jpg" width="190" height="190" alt="Orange Star">
         <p>Orange Star - <span class="price">$150</span></p>
       </div>
-      <div id="painting5" class="painting"><img src="_images/paintings/patterns.jpg" width="190" height="190" alt="Patterns">
+      <div id="painting5" class="painting" draggable="true"><img src="_images/paintings/patterns.jpg" width="190" height="190" alt="Patterns">
         <p>Patterns - <span class="price">$200</span></p>
       </div>
-      <div id="painting6" class="painting lastOne"> <img src="_images/paintings/rabbit.jpg" width="190" height="190" alt="Rabbigt">
+      <div id="painting6" class="painting lastOne" draggable="true"> <img src="_images/paintings/rabbit.jpg" width="190" height="190" alt="Rabbigt">
         <p>Rabbit - <span class="price">$350</span></p>
       </div>
     </article>
@@ -140,6 +140,8 @@
   </nav>
   <p>&copy;Copyright  Roux Academy of Art &amp; Design.  All rights reserved. <a href="_source/privacy.htm" title="privacy statement">Privacy Statement</a> |<a href="_source/legal.htm" title="legal terms"> Legal Terms and Conditions</a> |<a href="_source/disclosures.htm" title="student outcomes and disclosures"> Student Outcomes/Disclosures</a></p>
 </footer>
+<script src="_scripts/jquery.ndd.js" type="text/javascript" charset="utf-8"></script>
+<script src="_scripts/dragdrop.js" type="text/javascript" charset="utf-8"></script>
 <script>
   let printValue = (sliderID, textbox) => {
     let x = document.getElementById(textbox);
